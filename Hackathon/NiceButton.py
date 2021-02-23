@@ -1,9 +1,7 @@
 import tkinter as tk
 
 
-class NiceButton:
-    def __init__(self, text, command, master=None):
-        self.button = tk.Button(master)
-        self.button["text"] = text
-        self.button["command"] = command
-        self.button.pack(side="top")
+class NiceButton(tk.Button):
+    def __init__(self, side, master=None, **kwargs):
+        super().__init__(master, kwargs)
+        self.pack(side=side)
