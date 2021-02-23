@@ -11,9 +11,18 @@ class Application(tk.Frame):
 
         self.master = master
 
+        # Buttons at top.
         printHi = NiceButton(master=self.master, text="print hi", command=(lambda: self.say_hi()))
         quitApp = NiceButton(master=self.master, text="close window", command=(lambda: master.destroy()))
+
+        # Button in middle.
+        test = NiceButton(master=self.master, text="500, 500", command=(lambda: print("x=500 y=500")))
+        test.place(x=500, y=500)
+
+        # Draggable top left.
         sticky1 = StickyNote(master=self.master, text="Hello", bg="red")
+
+        # Canvas on right.
         googleMap = Map(master=self.master, bg="white", height=300, width=300)
 
     def say_hi(self):
