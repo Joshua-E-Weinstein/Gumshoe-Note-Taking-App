@@ -1,6 +1,9 @@
 import tkinter as tk
 
-class Map:
+from DragDropMixin import DragDropMixin
+
+
+class Map(DragDropMixin, tk.Canvas):
     def __init__(self, master=None, **kwargs):
-        self.canvas = tk.Canvas(master, **kwargs)
-        self.canvas.pack(side="right")
+        super().__init__(master, kwargs)
+        self.pack(side="right")
