@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>964</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>590</y>
+      <width>781</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(85, 255, 127);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>0</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>0</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>0</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>964</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuhi">
+    <property name="title">
+     <string>hi</string>
+    </property>
+    <addaction name="actionwhy"/>
+    <addaction name="actiongo_away"/>
+    <addaction name="actionno_files"/>
+    <addaction name="actionexit"/>
+    <addaction name="actionnow"/>
+    <addaction name="separator"/>
+    <addaction name="actionfile_save"/>
+    <addaction name="actionfile_open"/>
+    <addaction name="actionfile"/>
+   </widget>
+   <addaction name="menuhi"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionwhy">
+   <property name="text">
+    <string>why</string>
+   </property>
+  </action>
+  <action name="actiongo_away">
+   <property name="text">
+    <string>go away</string>
+   </property>
+  </action>
+  <action name="actionno_files">
+   <property name="text">
+    <string>no files</string>
+   </property>
+  </action>
+  <action name="actionexit">
+   <property name="text">
+    <string>exit</string>
+   </property>
+  </action>
+  <action name="actionnow">
+   <property name="text">
+    <string>now</string>
+   </property>
+  </action>
+  <action name="actionfile_save">
+   <property name="text">
+    <string>file save</string>
+   </property>
+  </action>
+  <action name="actionfile_open">
+   <property name="text">
+    <string>file open</string>
+   </property>
+  </action>
+  <action name="actionfile">
+   <property name="text">
+    <string>file?</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
