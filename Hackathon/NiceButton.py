@@ -1,11 +1,6 @@
-import tkinter as tk
+from PySide6 import QtCore, QtWidgets, QtGui
 
 
-class NiceButton(tk.Button):
-    def __init__(self, master=None, **kwargs):
-        super().__init__(master, kwargs)
-        self.pack(side="top")
-
-    # Function to pack the button to a frame.
-    def packTo(self, frame):
-        pass
+class NiceButton(QtWidgets.QPushButton):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

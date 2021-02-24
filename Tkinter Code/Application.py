@@ -20,7 +20,7 @@ class Application(tk.Frame):
         test.place(x=500, y=500)
 
         # Draggable top left.
-        sticky1 = StickyNote(master=self.master, text="Hello", bg="red")
+        sticky1 = StickyNote(master=self.master, bg="white", height=300, width=300)
 
         # Canvas on right.
         googleMap = Map(master=self.master, bg="white", height=300, width=300)

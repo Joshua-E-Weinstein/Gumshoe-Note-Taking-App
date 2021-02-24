@@ -1,18 +1,20 @@
-from Application import *
-import tkinter as tk
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+from NiceButton import NiceButton
+from Resources.QT_UIs.Test import Ui_MainWindow
 
 def main():
-    app = Application(master=root)  # Creates application based on root.
-    app.mainloop()  # Runs application.
-    print("end")
+    app = QtWidgets.QApplication(sys.argv)
 
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+
+    sys.exit(app.exec_())
 
 if __name__ == '__main__':
-
-    # Makes the window's root and changes a few properties.
-    root = tk.Tk()
-    root.title("Test")
-    root.geometry('1280x720')
 
     # Runs main.
     main()
