@@ -5,6 +5,14 @@ class GoogleMap(QtWidgets.QFrame):
     def __init__(self, *args):
         super().__init__(*args)
 
+        # Style Sheet
+        # self.setStyleSheet("""QWidget {
+        # border: 20px solid black;
+        # border-radius:10px;
+        # background-color: rgb(255,255,255);
+        # }""")
+
+
         verticalBox = QtWidgets.QVBoxLayout(self)
 
         self.webEngineView = QtWebEngineWidgets.QWebEngineView()
