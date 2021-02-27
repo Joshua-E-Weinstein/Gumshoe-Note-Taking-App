@@ -12,6 +12,8 @@ def main():
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 
+    # Google Map
+    ui.googleMap = GoogleMap(ui.centralwidget)
 
     MainWindow.show()
 
