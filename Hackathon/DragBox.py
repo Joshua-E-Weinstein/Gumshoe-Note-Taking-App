@@ -19,7 +19,7 @@ class Draggable(QtWidgets.QFrame):
 
     def mouseMoveEvent(self, event):
         if self.held:
-            self.setGeometry(event.windowPos().x() - self.width//2, event.windowPos().y(), self.width, self.height)
+            self.setGeometry(event.windowPos().x() - self.width//2, event.windowPos().y() - self.height//2, self.width, self.height)
 
     def mouseReleaseEvent(self, event):
         self.held = False
