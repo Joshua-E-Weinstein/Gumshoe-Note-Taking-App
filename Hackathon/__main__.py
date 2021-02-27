@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Hackathon.GoogleMap import GoogleMap
 from NiceButton import NiceButton
 from Resources.QT_UIs.Test import Ui_MainWindow
 
@@ -10,7 +11,10 @@ def main():
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+
+
     MainWindow.show()
+
 
     sys.exit(app.exec_())
 

@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Hackathon.GoogleMap import GoogleMap
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -17,6 +19,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(964, 710)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(70, 590, 781, 81))
         self.frame.setStyleSheet("background-color: rgb(85, 255, 127);")
@@ -40,15 +43,18 @@ class Ui_MainWindow(object):
         self.pushButton_6.setGeometry(QtCore.QRect(360, 0, 90, 80))
         self.pushButton_6.setObjectName("pushButton_6")
         MainWindow.setCentralWidget(self.centralwidget)
+
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 964, 21))
         self.menubar.setObjectName("menubar")
         self.menuhi = QtWidgets.QMenu(self.menubar)
         self.menuhi.setObjectName("menuhi")
         MainWindow.setMenuBar(self.menubar)
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
         self.actionwhy = QtWidgets.QAction(MainWindow)
         self.actionwhy.setObjectName("actionwhy")
         self.actiongo_away = QtWidgets.QAction(MainWindow)
@@ -65,6 +71,8 @@ class Ui_MainWindow(object):
         self.actionfile_open.setObjectName("actionfile_open")
         self.actionfile = QtWidgets.QAction(MainWindow)
         self.actionfile.setObjectName("actionfile")
+
+
         self.menuhi.addAction(self.actionwhy)
         self.menuhi.addAction(self.actiongo_away)
         self.menuhi.addAction(self.actionno_files)
@@ -75,6 +83,8 @@ class Ui_MainWindow(object):
         self.menuhi.addAction(self.actionfile_open)
         self.menuhi.addAction(self.actionfile)
         self.menubar.addAction(self.menuhi.menuAction())
+
+        self.googleMap = GoogleMap(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
