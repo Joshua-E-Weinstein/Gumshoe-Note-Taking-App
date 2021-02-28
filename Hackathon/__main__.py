@@ -4,6 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Hackathon.DragBox import Draggable
 from Hackathon.PannableArea import PannableArea
 from Hackathon.GoogleMap import GoogleMap
+from Hackathon.Test import Example
 from NiceButton import NiceButton
 from Resources.QT_UIs.Test import Ui_MainWindow
 
@@ -18,10 +19,12 @@ def main():
     pannableArea = PannableArea(ui.centralwidget)
 
     # Google Map.
-    googleMap = GoogleMap(pannableArea)
+    googleMap = pannableArea.scene.addWidget(GoogleMap())
+    googleMap1 = pannableArea.scene.addWidget(GoogleMap())
+    googleMap.moveBy(100,100)
 
     # Draggable thing.
-    dragItem = Draggable(pannableArea)
+    pannableArea.scene.addWidget(Draggable())
 
     MainWindow.show()
 

@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 
 
-class GoogleMap(QtWidgets.QFrame):
+class GoogleMap(QtWidgets.QWidget):
     def __init__(self, *args):
         super().__init__(*args)
 
@@ -12,15 +12,20 @@ class GoogleMap(QtWidgets.QFrame):
         # background-color: rgb(255,255,255);
         # }""")
 
+        self.draggable = True
+        self.dragging_threshould = 5
+        self.__mousePressPos = None
+        self.__mouseMovePos = None
 
-        verticalBox = QtWidgets.QVBoxLayout(self)
+
+        layout = QtWidgets.QVBoxLayout(self)
 
         self.webEngineView = QtWebEngineWidgets.QWebEngineView()
         self.loadPage()
 
-        verticalBox.addWidget(self.webEngineView)
+        layout.addWidget(self.webEngineView)
 
-        self.setLayout(verticalBox)
+        self.setLayout(layout)
 
         self.setGeometry(300, 300, 350, 250)
         self.setWindowTitle('QWebEngineView')
