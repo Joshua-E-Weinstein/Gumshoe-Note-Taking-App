@@ -8,9 +8,9 @@ class Twine(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.point1 = QPoint()
-        self.point2 = QPoint()
-        self.point3 = QPoint()
+        self.point1 = QPoint(100,100)
+        self.point2 = QPoint(150,200)
+        self.point3 = QPoint(200,200)
         self.dic = {1: self.point1, 2: self.point2, 3: self.point3}  # Record the three coordinates, which are the starting point, control point and end point
         self.count = 0
         self.initUI()
@@ -19,7 +19,10 @@ class Twine(QWidget):
     def initUI(self):
         self.setGeometry(300, 300, 380, 250)
         self.setWindowTitle('Bézier curve')
+
         self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlag(Qt.WindowStaysOnTopHint, True)
+
         self.show()
 
     def paintEvent(self, e):
@@ -43,14 +46,14 @@ class Twine(QWidget):
         qp.drawPath(path)
 
 
-    def mousePressEvent(self, event):  # Rewrite mouse press event
-        if event.button() == Qt.LeftButton:
-            self.count += 1
-            self.dic[self.count] = event.pos()  # Get the coordinates of the current click
-
-        if self.count == 3:
-            self.count = 0
-            self.update()  # Update function for triggering drawing events
+    # def mousePressEvent(self, event):  # Rewrite mouse press event
+    #     if event.button() == Qt.LeftButton:
+    #         self.count += 1
+    #         self.dic[self.count] = event.pos()  # Get the coordinates of the current click
+    #
+    #     if self.count == 3:
+    #         self.count = 0
+    #         self.update()  # Update function for triggering drawing events
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
