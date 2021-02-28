@@ -32,7 +32,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="stickyNoteButton">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -42,10 +42,20 @@
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Images/SmolNote.png</normaloff>../Images/SmolNote.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="pinButton">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -55,10 +65,20 @@
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Images/SmolImage.png</normaloff>../Images/SmolImage.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="mapButton">
      <property name="geometry">
       <rect>
        <x>64</x>
@@ -68,10 +88,20 @@
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Images/MapSmol.png</normaloff>../Images/MapSmol.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="imageButton">
      <property name="geometry">
       <rect>
        <x>96</x>
@@ -81,10 +111,20 @@
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Images/TackSmol.png</normaloff>../Images/TackSmol.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
        <x>128</x>
@@ -94,7 +134,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_6">
@@ -107,7 +147,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
      </property>
     </widget>
    </widget>

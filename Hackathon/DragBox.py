@@ -35,6 +35,7 @@ class DragBox(QtWidgets.QTextEdit, Draggable):
     def __init__(self, *args, x = 0, y = 0, width = 150, height = 150):
         super().__init__(*args)
         Draggable.passSize(self, x, y, width, height)
+        self.show()
 
         self.setStyleSheet("""background-color: #fff699""")
         self.setWindowTitle('Draggy Box')

@@ -41,6 +41,7 @@ class DraggableMap(GoogleMap, Draggable):
         super().__init__(*args)
         Draggable.passSize(self, x, y, width, height)
         GoogleMap.passSize(self, x, y, width, height)
+        self.show()
 
         self.setStyleSheet("""background-color: #FFFFFF""")
         self.setWindowTitle('Draggy Map')

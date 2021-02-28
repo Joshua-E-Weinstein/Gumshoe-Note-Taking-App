@@ -58,6 +58,7 @@ class Pin(Draggable):
     def __init__(self, x=0, y=0, parent=None):
         super().__init__(parent)
         Draggable.passSize(self, x, y, 32, 32)
+        self.show()
 
         self.setGeometry(x, y, 32, 32)
         self.setStyleSheet('background: url(../Resources/Images/pin.png)')

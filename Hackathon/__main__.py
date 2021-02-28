@@ -21,19 +21,9 @@ def main():
 
     MainWindow.setWindowTitle("Gumshoe")
 
-    # The container for movable widgets.
-    pannableArea = ui.centralwidget
-
-    # Google Map.
-    googleMap = DraggableMap(ui.centralwidget)
-
-
-    # Draggable thing.
-    proxy = DragBox(ui.centralwidget)
-
-    pin1 = Pin(300,300, parent=ui.centralwidget)
-    pin2 = Pin(400,350, parent=ui.centralwidget)
-    pin1.link(pin2, parent=ui.centralwidget)
+    ui.stickyNoteButton.clicked.connect(lambda: DragBox(ui.centralwidget, x = 200, y = 200))
+    ui.mapButton.clicked.connect(lambda: DraggableMap(ui.centralwidget, x = 200, y = 200))
+    ui.imageButton.clicked.connect(lambda: Pin(300,300, parent=ui.centralwidget).link(Pin(400,350, parent=ui.centralwidget), parent=ui.centralwidget))
 
     MainWindow.show()
 
