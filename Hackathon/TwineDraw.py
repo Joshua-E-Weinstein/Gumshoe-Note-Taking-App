@@ -5,7 +5,7 @@ from DragBox import Draggable
 import sys
 
 
-class Twine(QFrame):
+class Twine(QWidget):
 
     def __init__(self, point1 = QPoint(-0, 0), point3 = QPoint(100, 100), parent=None):
         super().__init__(parent)
@@ -24,7 +24,6 @@ class Twine(QFrame):
 
     def initUI(self):
         self.setGeometry(self.point1.x(), self.point1.y(), self.point3.x() - self.point1.x(), self.point3.y() + 10 - self.point1.y() + 10)
-        self.setWindowTitle('Bézier curve')
         # self.setAttribute(Qt.WA_TranslucentBackground)
 
     def paintEvent(self, e):
@@ -59,6 +58,7 @@ class Pin(QFrame):
         self.linkage = secondPin
         secondPin.linkage = self
 
+        print(parent)
         self.twine = Twine(self.pos(), self.linkage.pos(), parent)
 
     def onDrag(self):

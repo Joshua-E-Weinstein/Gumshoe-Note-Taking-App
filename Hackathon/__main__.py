@@ -4,7 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Hackathon.DragBox import Draggable, DragBox
 from Hackathon.MainUi import MainUi
 from Hackathon.PannableArea import PannableArea
-from Hackathon.GoogleMap import GoogleMap
+from Hackathon.GoogleMap import DraggableMap
 from Hackathon.Test import Twine
 from Hackathon.TwineDraw import Pin
 from NiceButton import NiceButton
@@ -21,7 +21,7 @@ def main():
     pannableArea = PannableArea(ui.centralwidget)
 
     # Google Map.
-    googleMap = GoogleMap(pannableArea)
+    googleMap = DraggableMap(pannableArea)
 
 
     # Draggable thing.
@@ -29,7 +29,7 @@ def main():
 
     pin1 = Pin(300,300, parent=pannableArea)
     pin2 = Pin(400,350, parent=pannableArea)
-    pin1.link(pin2)
+    pin1.link(pin2, parent=pannableArea)
 
     MainWindow.show()
 
