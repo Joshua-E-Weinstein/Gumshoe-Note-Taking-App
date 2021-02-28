@@ -12,7 +12,7 @@ class PannableArea(QtWidgets.QFrame):
 
         self._view = QtWidgets.QGraphicsView(self.scene, self)
 
-        self.setGeometry(self.parent().parent().frameGeometry())
+        self._view.setGeometry(self.parent().parent().frameGeometry())
         self.lower()
 
         self._zoom = 1
