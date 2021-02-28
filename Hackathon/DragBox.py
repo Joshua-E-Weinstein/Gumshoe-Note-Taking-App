@@ -68,7 +68,7 @@ class DragBox(QtWidgets.QTextEdit, Draggable):
         Draggable.passSize(self, x, y, width, height)
         self.show()
 
-        self.setStyleSheet("""background-color: #fff699""")
+        self.setStyleSheet("border: 0;\nfont: 16px 'Comic Sans MS';\nbackground-color: #fff699")
         self.setWindowTitle('Draggy Box')
 
 class Image(DraggableLabel):
