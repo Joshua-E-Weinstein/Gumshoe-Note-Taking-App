@@ -8,5 +8,6 @@ class MainUi(QtWidgets.QMainWindow):
         self.setMinimumSize(500, 300)
         self.setStyleSheet("background-color: qlineargradient(x1: 0.5, y1: 0.5 x2: 0.5, y2: 1, stop: 0 #FAC886 , stop: 0.84 #D28C4F);")
 
+
     # def resizeEvent(self, a0: QtGui.QResizeEvent):
     #     self.findChild(PannableArea, "pannableArea").updateSize()

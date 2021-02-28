@@ -18,17 +18,7 @@ class Twine(QLabel):
         self.count = 0
         self.initUI()
         print(self.dic[1])
-
-    def __update__(self):
-        self.getPoint2()
-
-        self.dic = {1: self.point1, 2: self.point2,
-                    3: self.point3}  # Record the three coordinates, which are the starting point, control point and end point
-        self.count = 0
-        self.initUI()
-        print(self.dic[1])
-
-
+    
     def getPoint2(self):
         self.point2 = QPoint((self.point1.x() + self.point3.x()) // 2, (self.point1.y() + self.point3.y()) // 2 + 50)
 
@@ -84,5 +74,5 @@ class Pin(Draggable):
         # self.twine.point3 = self.linkage.pos()
 
         # self.twine.getPoint2()
-        self.twine.update()
-        self.twine.paintEvent()
+        self.twine = Twine(self.pos(), self.linkage.pos(), self.parent())
+        self.update()
