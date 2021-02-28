@@ -41,3 +41,6 @@ class PannableArea(QtWidgets.QFrame):
         print(geometry)
         self.setGeometry(geometry)
         self._view.setGeometry(geometry)
+
+    def zoom(self):
+        return self._zoom
