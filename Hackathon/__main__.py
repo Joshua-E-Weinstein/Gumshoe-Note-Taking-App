@@ -1,13 +1,11 @@
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
 
-from Hackathon.DragBox import Draggable, DragBox
+from Hackathon.DragBox import DragBox
 from Hackathon.MainUi import MainUi
-from Hackathon.PannableArea import PannableArea
 from Hackathon.GoogleMap import DraggableMap
-from Hackathon.Test import Twine
-from Hackathon.TwineDraw import Pin
-from NiceButton import NiceButton
+from Hackathon.TwineDraw import Pin, Twine
+from Hackathon.temp import Example
 from Resources.QT_UIs.Test import Ui_MainWindow
 
 def main():
@@ -18,18 +16,18 @@ def main():
     ui.setupUi(MainWindow)
 
     # The container for movable widgets.
-    pannableArea = PannableArea(ui.centralwidget)
+    pannableArea = ui.centralwidget
 
     # Google Map.
-    googleMap = DraggableMap(pannableArea)
+    googleMap = DraggableMap(ui.centralwidget)
 
 
     # Draggable thing.
-    proxy = DragBox(pannableArea)
+    proxy = DragBox(ui.centralwidget)
 
-    pin1 = Pin(300,300, parent=pannableArea)
-    pin2 = Pin(400,350, parent=pannableArea)
-    pin1.link(pin2, parent=pannableArea)
+    pin1 = Pin(300,300, parent=ui.centralwidget)
+    pin2 = Pin(400,350, parent=ui.centralwidget)
+    pin1.link(pin2, parent=ui.centralwidget)
 
     MainWindow.show()
 

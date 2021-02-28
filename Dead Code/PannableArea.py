@@ -3,7 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Hackathon.GoogleMap import GoogleMap
 
 
-class PannableArea(QtWidgets.QFrame):
+class PannableArea(QtWidgets.QLabel):
     def __init__(self, *args):
         super().__init__(*args)
         # self.setStyleSheet("background: rgb(210,140,79);\nbackground: linear-gradient(0deg, rgba(210,140,79,1) 0%, rgba(250,200,134,1) 84%);")
