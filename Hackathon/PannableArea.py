@@ -6,6 +6,7 @@ from Hackathon.GoogleMap import GoogleMap
 class PannableArea(QtWidgets.QFrame):
     def __init__(self, *args):
         super().__init__(*args)
+        # self.setStyleSheet("background: rgb(210,140,79);\nbackground: linear-gradient(0deg, rgba(210,140,79,1) 0%, rgba(250,200,134,1) 84%);")
 
         self.setObjectName("pannableArea")
 
@@ -13,8 +14,8 @@ class PannableArea(QtWidgets.QFrame):
         self.scene.setMinimumRenderSize(100)
 
         self._view = QtWidgets.QGraphicsView(self.scene, self)
-
         self._view.setGeometry(self.parent().parent().frameGeometry())
+        self._view.setStyleSheet("background-color: qlineargradient(x1: 0.5, y1: 0.5 x2: 0.5, y2: 1, stop: 0 #FAC886 , stop: 0.84 #D28C4F);")
         self.lower()
 
         self._zoom = 1

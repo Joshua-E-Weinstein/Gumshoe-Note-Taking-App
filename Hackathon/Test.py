@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt, QPoint
 import sys
 
 
-class Example(QWidget):
+class Twine(QWidget):
 
     def __init__(self):
         super().__init__()
@@ -53,5 +53,5 @@ class Example(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = Example()
+    ex = Twine()
     sys.exit(app.exec_())

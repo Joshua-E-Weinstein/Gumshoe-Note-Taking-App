@@ -5,7 +5,7 @@ from Hackathon.DragBox import Draggable, DragBox
 from Hackathon.MainUi import MainUi
 from Hackathon.PannableArea import PannableArea
 from Hackathon.GoogleMap import GoogleMap
-from Hackathon.Test import Example
+from Hackathon.Test import Twine
 from NiceButton import NiceButton
 from Resources.QT_UIs.Test import Ui_MainWindow
 
@@ -18,14 +18,17 @@ def main():
 
     # The container for movable widgets.
     pannableArea = PannableArea(ui.centralwidget)
+    scene = pannableArea.scene
 
     # Google Map.
-    googleMap = pannableArea.scene.addWidget(GoogleMap(), QtCore.Qt.Window)
-    googleMap1 = pannableArea.scene.addWidget(GoogleMap(), QtCore.Qt.Window)
+    googleMap = scene.addWidget(GoogleMap(), QtCore.Qt.Window)
+    googleMap1 = scene.addWidget(GoogleMap(), QtCore.Qt.Window)
     googleMap.moveBy(100,100)
 
     # Draggable thing.
-    proxy = pannableArea.scene.addWidget(DragBox(), QtCore.Qt.Window)
+    proxy = scene.addWidget(DragBox(), QtCore.Qt.Window)
+
+    string = scene.addWidget(Twine())
 
 
     MainWindow.show()
