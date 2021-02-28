@@ -15,7 +15,10 @@ def main():
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 
-    MainWindow.setWindowIcon(QtGui.QIcon('../Resources/Images/icon.png'))
+    icon = QtGui.QIcon('../Resources/Images/icon.png')
+    MainWindow.setWindowIcon(icon)
+
+
     MainWindow.setWindowTitle("Gumshoe")
 
     # The container for movable widgets.
