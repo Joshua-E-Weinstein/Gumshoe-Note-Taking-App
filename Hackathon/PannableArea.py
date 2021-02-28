@@ -10,29 +10,29 @@ class PannableArea(QtWidgets.QFrame):
 
         self.setObjectName("pannableArea")
 
-        self.scene = QtWidgets.QGraphicsScene()
-        self.scene.setMinimumRenderSize(100)
-
-        self._view = QtWidgets.QGraphicsView(self.scene, self)
-        self._view.setGeometry(self.parent().parent().frameGeometry())
-        self._view.setStyleSheet("background-color: qlineargradient(x1: 0.5, y1: 0.5 x2: 0.5, y2: 1, stop: 0 #FAC886 , stop: 0.84 #D28C4F);")
+        self.setGeometry(self.parent().parent().frameGeometry())
+        self.setStyleSheet("background-color: qlineargradient(x1: 0.5, y1: 0.5 x2: 0.5, y2: 1, stop: 0 #FAC886 , stop: 0.84 #D28C4F);")
         self.lower()
 
-        self._zoom = 1
+        self.originalX = 0
+        self.originalY = 0
+        self.moving = False
 
-    def wheelEvent(self, event):
-        degrees = event.angleDelta().y()
+    def mousePressEvent(self, event):
+        print("1")
+        if event.button() == QtCore.Qt.MidButton:
+            print("1.5")
+            self.moving = True
 
-        if degrees > 0:
-            if self._zoom <= 1.5:
-                self._zoom *= 1.05
-        elif self._zoom >= 0.65:
-            self._zoom /= 1.05
+    def mouseMoveEvent(self, event):
+        print("2")
+        if self.moving:
+            print("2.5")
 
-        self.updateView()
-
-    def updateView(self):
-        self._view.setTransform(QtGui.QTransform().scale(self._zoom, self._zoom))
+    def mouseReleaseEvent(self, event):
+        print("3")
+        if event.button() == QtCore.Qt.MidButton:
+            self.moving = False
 
     def updateSize(self):
         geometry = self.parent().parent().geometry()
@@ -40,7 +40,3 @@ class PannableArea(QtWidgets.QFrame):
         geometry.setY(0)
         print(geometry)
         self.setGeometry(geometry)
-        self._view.setGeometry(geometry)
-
-    def zoom(self):
-        return self._zoom

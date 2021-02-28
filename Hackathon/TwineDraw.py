@@ -1,14 +1,14 @@
-from PyQt5.QtWidgets import QWidget, QApplication, QFrame
+from PyQt5.QtWidgets import QWidget, QApplication, QFrame, QGraphicsItem
 from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor, QWindow
-from PyQt5.QtCore import Qt, QPoint
+from PyQt5.QtCore import Qt, QPoint, QEvent
 from DragBox import Draggable
 import sys
 
 
-class Twine(QWidget):
+class Twine(QFrame):
 
-    def __init__(self, point1 = QPoint(-0, 0), point3 = QPoint(100, 100)):
-        super().__init__()
+    def __init__(self, point1 = QPoint(-0, 0), point3 = QPoint(100, 100), parent=None):
+        super().__init__(parent)
         self.point1 = point1
         self.point3 = point3
 
@@ -25,8 +25,7 @@ class Twine(QWidget):
     def initUI(self):
         self.setGeometry(self.point1.x(), self.point1.y(), self.point3.x() - self.point1.x(), self.point3.y() + 10 - self.point1.y() + 10)
         self.setWindowTitle('Bézier curve')
-        self.setAttribute(Qt.WA_TranslucentBackground)
-        self.show()
+        # self.setAttribute(Qt.WA_TranslucentBackground)
 
     def paintEvent(self, e):
         pen = QPen()
@@ -50,20 +49,20 @@ class Twine(QWidget):
 
 class Pin(QFrame):
 
-    def __init__(self, *args, x = 0, y = 0):
-        super().__init__(*args)
+    def __init__(self, x = 0, y = 0, parent=None):
+        super().__init__(parent)
 
         self.setGeometry(x, y, 1, 1)
         self.setStyleSheet("""background-color: #ebbf55""")
 
-    def link(self, secondPin, scene):
+    def link(self, secondPin, parent=None):
         self.linkage = secondPin
         secondPin.linkage = self
 
-        self.twine = Twine(self.pos(). self.linkage.pos())
+        self.twine = Twine(self.pos(), self.linkage.pos(), parent)
 
-    #def onDrag(self):
-    #    self.twine.point1 = self.pos()
-    #    self.twine.point3 = self.linkage.pos()
+    def onDrag(self):
+       self.twine.point1 = self.pos()
+       self.twine.point3 = self.linkage.pos()
 
-    #    self.twine.getPoint2()
+       self.twine.getPoint2()

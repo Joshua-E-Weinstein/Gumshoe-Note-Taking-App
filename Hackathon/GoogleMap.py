@@ -12,11 +12,6 @@ class GoogleMap(QtWidgets.QWidget):
         # background-color: rgb(255,255,255);
         # }""")
 
-        self.draggable = True
-        self.dragging_threshould = 5
-        self.__mousePressPos = None
-        self.__mouseMovePos = None
-
 
         layout = QtWidgets.QVBoxLayout(self)
 

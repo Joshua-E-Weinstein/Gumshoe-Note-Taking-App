@@ -18,10 +18,8 @@ class Twine(QWidget):
 
     def initUI(self):
         self.setGeometry(300, 300, 380, 250)
-        self.setWindowTitle('Bézier curve')
 
         self.setAttribute(Qt.WA_TranslucentBackground)
-        self.setWindowFlag(Qt.WindowStaysOnTopHint, True)
 
         self.show()
 
