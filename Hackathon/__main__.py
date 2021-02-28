@@ -2,6 +2,7 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from Hackathon.DragBox import Draggable, DragBox
+from Hackathon.MainUi import MainUi
 from Hackathon.PannableArea import PannableArea
 from Hackathon.GoogleMap import GoogleMap
 from Hackathon.Test import Example
@@ -11,7 +12,7 @@ from Resources.QT_UIs.Test import Ui_MainWindow
 def main():
     app = QtWidgets.QApplication(sys.argv)
 
-    MainWindow = QtWidgets.QMainWindow()
+    MainWindow = MainUi()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
 

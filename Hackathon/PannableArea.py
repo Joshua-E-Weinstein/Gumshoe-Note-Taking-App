@@ -7,6 +7,8 @@ class PannableArea(QtWidgets.QFrame):
     def __init__(self, *args):
         super().__init__(*args)
 
+        self.setObjectName("pannableArea")
+
         self.scene = QtWidgets.QGraphicsScene()
         self.scene.setMinimumRenderSize(100)
 
@@ -31,3 +33,11 @@ class PannableArea(QtWidgets.QFrame):
 
     def updateView(self):
         self._view.setTransform(QtGui.QTransform().scale(self._zoom, self._zoom))
+
+    def updateSize(self):
+        geometry = self.parent().parent().geometry()
+        geometry.setX(0)
+        geometry.setY(0)
+        print(geometry)
+        self.setGeometry(geometry)
+        self._view.setGeometry(geometry)
