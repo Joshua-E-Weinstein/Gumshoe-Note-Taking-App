@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QPointF
-from PyQt5.QtGui import QDrag
+from PyQt5.QtGui import QDrag, QPixmap
+from PyQt5.QtWidgets import QFileDialog, QFrame, QLabel
 
 
 class Draggable(QtWidgets.QFrame):
@@ -31,6 +32,36 @@ class Draggable(QtWidgets.QFrame):
     def mouseReleaseEvent(self, event):
         self.held = False
 
+
+class DraggableLabel(QtWidgets.QLabel):
+    def __init__(self, *args):
+        super().__init__(*args)
+
+        image = QFileDialog().getOpenFileName()[0]
+        pixmap = QPixmap(image)
+        self.setPixmap(pixmap)
+        self.resize(pixmap.width(),pixmap.height())
+        print(pixmap.size())
+        print(self.size())
+
+    def passSize(self, x, y, width=100, height=100):
+        self.width = width
+        self.height = height
+
+        self.setWindowTitle('Draggy Box')
+
+    def mousePressEvent(self, event):
+        self.held = True
+        self.mousePos = event.localPos()  # Saves mouse click position for math
+
+    def mouseMoveEvent(self, event):
+        if self.held:
+            self.setGeometry(event.windowPos().x() - self.mousePos.x(), event.windowPos().y() - self.mousePos.y(), self.width, self.height)
+
+    def mouseReleaseEvent(self, event):
+        self.held = False
+
+
 class DragBox(QtWidgets.QTextEdit, Draggable):
     def __init__(self, *args, x = 0, y = 0, width = 150, height = 150):
         super().__init__(*args)
@@ -39,3 +70,8 @@ class DragBox(QtWidgets.QTextEdit, Draggable):
 
         self.setStyleSheet("""background-color: #fff699""")
         self.setWindowTitle('Draggy Box')
+
+class Image(DraggableLabel):
+    def __init__(self, *args, x = 0, y = 0, width = 150, height = 150):
+        super().__init__(*args)
+        DraggableLabel.passSize(self, x, y, width, height)

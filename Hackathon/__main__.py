@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtWidgets, QtGui
 
-from Hackathon.DragBox import DragBox
+from Hackathon.DragBox import DragBox, Image
 from Hackathon.MainUi import MainUi
 from Hackathon.GoogleMap import DraggableMap
 from Hackathon.TwineDraw import Pin, Twine
@@ -20,6 +20,8 @@ def main():
 
 
     MainWindow.setWindowTitle("Gumshoe")
+
+    image = Image(ui.centralwidget)
 
     ui.stickyNoteButton.clicked.connect(lambda: DragBox(ui.centralwidget, x = 200, y = 200))
     ui.mapButton.clicked.connect(lambda: DraggableMap(ui.centralwidget, x = 200, y = 200))
