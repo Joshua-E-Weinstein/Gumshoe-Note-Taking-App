@@ -67,12 +67,20 @@ class Pin(Draggable):
         secondPin.linkage = self
 
         self.twine = Twine(self.pos(), self.linkage.pos(), parent)
+        self.linkage.twine = self.twine
 
 
     def onDrag(self):
         # self.twine.point1 = self.pos()
         # self.twine.point3 = self.linkage.pos()
-
         # self.twine.getPoint2()
-        self.twine = Twine(self.pos(), self.linkage.pos(), self.parent())
+
+        self.twine.dic[1] = self.pos()
+        self.twine.dic[3] = self.linkage.pos()
+        self.twine.dic[2] = QPoint((self.twine.dic[1].x() + self.twine.dic[3].x()) // 2, (self.twine.dic[1].y() + self.twine.dic[3].y()) // 2 + 50)
+
         self.update()
+
+        #self.twine.getPoint2()
+
+        #self.twine = Twine(self.pos(), self.linkage.pos(), self.parent())
