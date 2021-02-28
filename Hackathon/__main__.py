@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 
 from Hackathon.DragBox import DragBox
 from Hackathon.MainUi import MainUi
@@ -14,6 +14,9 @@ def main():
     MainWindow = MainUi()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+
+    MainWindow.setWindowIcon(QtGui.QIcon('../Resources/Images/icon.png'))
+    MainWindow.setWindowTitle("Gumshoe")
 
     # The container for movable widgets.
     pannableArea = ui.centralwidget
