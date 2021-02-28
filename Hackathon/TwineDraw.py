@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QApplication, QFrame, QGraphicsItem
+from PyQt5.QtWidgets import QWidget, QApplication, QFrame, QGraphicsItem, QLabel
 from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor, QWindow
 from PyQt5.QtCore import Qt, QPoint, QEvent
 from DragBox import Draggable
@@ -46,13 +46,14 @@ class Twine(QWidget):
         qp.setRenderHint(QPainter.Antialiasing)
         qp.drawPath(path)
 
-class Pin(QFrame):
+class Pin(Draggable):
 
     def __init__(self, x = 0, y = 0, parent=None):
         super().__init__(parent)
+        Draggable.passSize(self, x, y, 50, 50)
 
-        self.setGeometry(x, y, 1, 1)
-        self.setStyleSheet("""background-color: #ebbf55""")
+        self.setGeometry(x, y, 50, 50)
+        self.setStyleSheet("background-image: url(:Resources/Images/pin,png);")
 
     def link(self, secondPin, parent=None):
         self.linkage = secondPin
@@ -60,6 +61,7 @@ class Pin(QFrame):
 
         print(parent)
         self.twine = Twine(self.pos(), self.linkage.pos(), parent)
+
 
     def onDrag(self):
        self.twine.point1 = self.pos()
