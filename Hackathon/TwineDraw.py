@@ -25,6 +25,8 @@ class Twine(QWidget):
     def initUI(self):
         self.setGeometry(self.point1.x(), self.point1.y(), self.point3.x() - self.point1.x(), self.point3.y() + 10 - self.point1.y() + 10)
         # self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setAttribute(Qt.WA_TransparentForMouseEvents)
+
 
     def paintEvent(self, e):
         pen = QPen()
