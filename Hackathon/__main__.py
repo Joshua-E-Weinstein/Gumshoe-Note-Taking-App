@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from Hackathon.DragBox import Draggable
+from Hackathon.DragBox import Draggable, DragBox
 from Hackathon.PannableArea import PannableArea
 from Hackathon.GoogleMap import GoogleMap
 from Hackathon.Test import Example
@@ -24,7 +24,7 @@ def main():
     googleMap.moveBy(100,100)
 
     # Draggable thing.
-    pannableArea.scene.addWidget(Draggable())
+    pannableArea.scene.addWidget(DragBox())
 
     MainWindow.show()
 
