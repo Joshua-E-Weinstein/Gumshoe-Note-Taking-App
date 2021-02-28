@@ -20,12 +20,13 @@ def main():
     pannableArea = PannableArea(ui.centralwidget)
 
     # Google Map.
-    googleMap = pannableArea.scene.addWidget(GoogleMap())
-    googleMap1 = pannableArea.scene.addWidget(GoogleMap())
+    googleMap = pannableArea.scene.addWidget(GoogleMap(), QtCore.Qt.Window)
+    googleMap1 = pannableArea.scene.addWidget(GoogleMap(), QtCore.Qt.Window)
     googleMap.moveBy(100,100)
 
     # Draggable thing.
-    pannableArea.scene.addWidget(DragBox())
+    proxy = pannableArea.scene.addWidget(DragBox(), QtCore.Qt.Window)
+
 
     MainWindow.show()
 

@@ -27,7 +27,7 @@ class Draggable(QtWidgets.QFrame):
     def mouseReleaseEvent(self, event):
         self.held = False
 
-class DragBox(QtWidgets.QTextEdit, Draggable):
+class DragBox(QtWidgets.QTextEdit):
     def __init__(self, *args, x = 0, y = 0, width = 150, height = 150):
         super().__init__(*args)
         Draggable.passSize(self, x, y, width, height)

@@ -21,14 +21,13 @@ class PannableArea(QtWidgets.QFrame):
 
     def wheelEvent(self, event):
         degrees = event.angleDelta().y()
-        print(self.size())
 
         if degrees > 0:
-            self._zoom *= 1.05
-        else:
+            if self._zoom <= 1.5:
+                self._zoom *= 1.05
+        elif self._zoom >= 0.65:
             self._zoom /= 1.05
 
-        print(self._zoom)
         self.updateView()
 
     def updateView(self):
