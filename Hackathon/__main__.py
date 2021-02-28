@@ -21,11 +21,10 @@ def main():
 
     MainWindow.setWindowTitle("Gumshoe")
 
-    image = Image(ui.centralwidget)
-
     ui.stickyNoteButton.clicked.connect(lambda: DragBox(ui.centralwidget, x = 200, y = 200))
     ui.mapButton.clicked.connect(lambda: DraggableMap(ui.centralwidget, x = 200, y = 200))
     ui.imageButton.clicked.connect(lambda: Pin(300,300, parent=ui.centralwidget).link(Pin(400,350, parent=ui.centralwidget), parent=ui.centralwidget))
+    ui.pinButton.clicked.connect(lambda: Image(ui.centralwidget))
 
     MainWindow.show()
 

@@ -37,16 +37,16 @@ class DraggableLabel(QtWidgets.QLabel):
     def __init__(self, *args):
         super().__init__(*args)
 
-        image = QFileDialog().getOpenFileName()[0]
-        pixmap = QPixmap(image)
-        self.setPixmap(pixmap)
-        self.resize(pixmap.width(),pixmap.height())
-        print(pixmap.size())
+        self.image = QFileDialog().getOpenFileName()[0]
+        self.pixmap = QPixmap(self.image)
+        self.setPixmap(self.pixmap)
+        self.resize(self.pixmap.width(),self.pixmap.height())
+        print(self.pixmap.size())
         print(self.size())
 
     def passSize(self, x, y, width=100, height=100):
-        self.width = width
-        self.height = height
+        self.width = self.pixmap.width()
+        self.height = self.pixmap.height()
 
         self.setWindowTitle('Draggy Box')
 
@@ -75,3 +75,4 @@ class Image(DraggableLabel):
     def __init__(self, *args, x = 0, y = 0, width = 150, height = 150):
         super().__init__(*args)
         DraggableLabel.passSize(self, x, y, width, height)
+        self.show()
