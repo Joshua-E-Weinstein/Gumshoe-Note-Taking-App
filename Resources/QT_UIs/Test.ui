@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>191</width>
+      <width>128</width>
       <height>32</height>
      </rect>
     </property>
@@ -122,32 +122,6 @@
        <width>30</width>
        <height>30</height>
       </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>0</y>
-       <width>32</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>0</y>
-       <width>32</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>
