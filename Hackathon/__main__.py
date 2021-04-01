@@ -4,8 +4,7 @@ from PyQt5 import QtWidgets, QtGui
 from Hackathon.DragBox import DragBox, Image
 from Hackathon.MainUi import MainUi
 from Hackathon.GoogleMap import DraggableMap
-from Hackathon.TwineDraw import Pin, Twine
-from Hackathon.temp import Example
+from Hackathon.TwineDraw import Pin
 from Resources.QT_UIs.Test import Ui_MainWindow
 
 def main():

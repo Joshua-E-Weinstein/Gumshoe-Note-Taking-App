@@ -4,11 +4,11 @@
 
 >This app comes with a number of features (All Draggable!):
 >1. **Notepads!**  
-![Notepad](https://github.com/Joshua-E-Weinstein/Hackathon/blob/main/Notepad%20Example.png)
+![Notepad](https://github.com/Joshua-E-Weinstein/Hackathon/blob/main/Resources/Images/Notepad%20Example.png)
 >2. **Images!**
-![Image](https://github.com/Joshua-E-Weinstein/Hackathon/blob/main/Image%20Example.png)
+![Image](https://github.com/Joshua-E-Weinstein/Hackathon/blob/main/Resources/Images/Image%20Example.png)
 >3. **Maps!**  
-![Map](https://github.com/Joshua-E-Weinstein/Hackathon/blob/main/Map%20Example.png)
+![Map](https://github.com/Joshua-E-Weinstein/Hackathon/blob/main/Resources/Images/Map%20Example.png)
 >4. **Pins!**  
 
 Image Credits:  

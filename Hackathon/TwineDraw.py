@@ -1,8 +1,7 @@
-from PyQt5.QtWidgets import QWidget, QApplication, QFrame, QGraphicsItem, QLabel
-from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor, QWindow
-from PyQt5.QtCore import Qt, QPoint, QEvent
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtGui import QPainter, QPainterPath, QPen, QColor
+from PyQt5.QtCore import Qt, QPoint
 from DragBox import Draggable
-import sys
 
 
 class Twine(QLabel):
@@ -72,9 +71,6 @@ class Pin(Draggable):
         self.linkage.twine = self.twine
 
     def onDrag(self):
-        # self.twine.point1 = self.pos()
-        # self.twine.point3 = self.linkage.pos()
-        # self.twine.getPoint2()
         pos1 = QPoint(self.pos().x() + 16, self.pos().y() + 16)
         pos2 = QPoint(self.linkage.pos().x() + 16, self.linkage.pos().y() + 16)
 
@@ -84,7 +80,3 @@ class Pin(Draggable):
                                    (self.twine.dic[1].y() + self.twine.dic[3].y()) // 2 + 50)
 
         self.update()
-
-        # self.twine.getPoint2()
-
-        # self.twine = Twine(self.pos(), self.linkage.pos(), self.parent())

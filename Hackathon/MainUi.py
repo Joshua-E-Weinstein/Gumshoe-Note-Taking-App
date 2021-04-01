@@ -1,6 +1,4 @@
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import Qt
-
 
 class MainUi(QtWidgets.QMainWindow):
     def __init__(self):

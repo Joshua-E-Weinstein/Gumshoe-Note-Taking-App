@@ -1,7 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import Qt, QPointF
-from PyQt5.QtGui import QDrag, QPixmap
-from PyQt5.QtWidgets import QFileDialog, QFrame, QLabel
+from PyQt5 import QtWidgets
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QFileDialog
 
 
 class Draggable(QtWidgets.QFrame):

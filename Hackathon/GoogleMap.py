@@ -1,17 +1,9 @@
-from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
+from PyQt5 import QtWidgets, QtWebEngineWidgets
 from DragBox import Draggable
 
 class GoogleMap(QtWidgets.QFrame):
     def __init__(self, *args):
         super().__init__(*args)
-
-        # Style Sheet
-        # self.setStyleSheet("""QWidget {
-        # border: 20px solid black;
-        # border-radius:10px;
-        # background-color: rgb(255,255,255);
-        # }""")
-
 
         layout = QtWidgets.QVBoxLayout(self)
 
